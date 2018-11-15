@@ -40,3 +40,40 @@ def poly(*args):
     print(args)
 	
     return result
+
+def poly2(x, *coefs):
+    """
+    f(x) = a * x + b * x**2 + c * x**3 + ...
+
+    *args = (x, a, b, ...)
+    """
+
+    # Add a warning for something potentially incorrect
+    if len(coefs) == 0:
+        raise Exception("You have not provided any polynomial coefficients.")
+
+    # Calculate using a loop
+    result = 0
+    for power,c in enumerate(coefs):
+        result += c * (x ** (power+1))
+
+    return result
+
+
+def poly_np(x, *coefs):
+    """
+    f(x) = a * x + b * x**2 + c * x**3 + ...
+
+    *args = (x, a, b, ...)
+    """
+
+    # Add a warning for something potentially incorrect
+    if len(coefs) == 0:
+        raise Exception("You have not provided any polynomial coefficients.")
+
+    # Calculate using a loop
+    result = x * 0
+    for power,c in enumerate(coefs):
+        result += c * (x ** (power+1))
+
+    return result

@@ -5,4 +5,8 @@
 source activate algebra # For some reason this doesn't work
 
 # Install your package
-pip install -e .
+ipip install -e .
+
+# Install other packages
+pip install numpy
+pip install yapf
